@@ -4,7 +4,7 @@ import org.apache.tools.ant.filters.ReplaceTokens
 plugins {
     id("java")
     id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("se.solrike.sonarlint") version "2.1.0"
+    id("se.solrike.sonarlint") version "2.2.0"
 }
 
 group = "me.harry0198.infoheads"
