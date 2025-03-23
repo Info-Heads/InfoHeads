@@ -49,7 +49,7 @@ public class InteractHandler {
         if (infoHeadPropertiesOptional.isEmpty() || !canUse(player, infoHeadPropertiesOptional.get())) return;
 
         // When player is sneaking and right clicking, open the wizard.
-        if (player.isSneaking() && handAction == HandAction.RIGHT_CLICK) {
+        if (player.isSneaking() && handAction == HandAction.RIGHT_CLICK && player.hasPermission(Constants.ADMIN_PERMISSION)) {
             eventDispatcher.dispatchEvent(new OpenMenuMenuEvent(infoHeadPropertiesOptional.get(), player));
             return;
         }
