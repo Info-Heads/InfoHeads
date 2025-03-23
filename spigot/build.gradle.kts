@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "me.harry0198.infoheads"
-version = "2.5.1"
+version = "2.5.2"
 java {
     sourceCompatibility = JavaVersion.VERSION_17
 }
