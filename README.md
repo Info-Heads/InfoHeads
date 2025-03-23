@@ -1,7 +1,7 @@
 # Infoheads
 Repository / SourceCode for the plugin Infoheads
 
-Click [here](https://docs.rocketplugins.space/infoheads/) to view the documentation.
+Click [here](https://github.com/Info-Heads/InfoHeads/wiki) to view the documentation.
 
 Developers! Please ensure you include reference to this source code if you decide to directly use any of the code. This can be done by adding a tag @Author.
 
