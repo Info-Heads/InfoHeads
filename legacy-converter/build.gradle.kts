@@ -16,7 +16,7 @@ repositories {
     }
 }
 
-var junitVersion = "5.11.4"
+var junitVersion = "5.12.1"
 var gsonVersion = "2.11.0"
 var spigotVersion = "1.21-R0.1-SNAPSHOT"
 
