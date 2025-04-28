@@ -1,6 +1,6 @@
 plugins {
     id("java")
-    id("se.solrike.sonarlint") version "2.1.0"
+    id("se.solrike.sonarlint") version "2.2.0"
 }
 
 group = "me.harry0198.infoheads.core"
