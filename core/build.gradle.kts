@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "me.harry0198.infoheads.core"
-version = "2.5.2"
+version = "2.5.3"
 java {
     sourceCompatibility = JavaVersion.VERSION_17
 }

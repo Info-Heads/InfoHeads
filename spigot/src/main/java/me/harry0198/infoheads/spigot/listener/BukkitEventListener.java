@@ -49,7 +49,8 @@ public class BukkitEventListener implements Listener {
     public void onBreak(BlockBreakEvent event) {
         Objects.requireNonNull(event);
 
-        breakHandler.handle(new BukkitOnlinePlayer(event.getPlayer()), MappingUtil.from(event.getBlock().getLocation()));
+        var shouldCancel = breakHandler.handle(new BukkitOnlinePlayer(event.getPlayer()), MappingUtil.from(event.getBlock().getLocation()));
+        if (shouldCancel) event.setCancelled(true);
     }
 
     @EventHandler
