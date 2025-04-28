@@ -10,6 +10,7 @@ import me.harry0198.infoheads.core.persistence.entity.InfoHeadProperties;
 import me.harry0198.infoheads.core.model.Location;
 import me.harry0198.infoheads.core.model.OnlinePlayer;
 import me.harry0198.infoheads.core.service.InfoHeadService;
+import me.harry0198.infoheads.core.utils.Constants;
 
 import java.util.Optional;
 import java.util.logging.Level;
@@ -36,13 +37,19 @@ public class BreakHandler {
      * Block broken event.
      * @param player
      * @param breakLocation {@link Location} of the breakage.
+     * @return true if should cancel the event.
      */
-    public void handle(OnlinePlayer player, Location breakLocation) {
+    public boolean handle(OnlinePlayer player, Location breakLocation) {
         Optional<InfoHeadProperties> infoHeadPropertiesOptional = infoHeadService.getInfoHead(breakLocation);
 
         // Ignore if player is not looking at anything / infohead does not exist.
         if (infoHeadPropertiesOptional.isEmpty()) {
-            return;
+            return false;
+        }
+
+        // Infohead is here, player does not have permission.
+        if (!player.hasPermission(Constants.ADMIN_PERMISSION)) {
+            return true;
         }
 
         infoHeadService.removeInfoHead(infoHeadPropertiesOptional.get())
@@ -56,5 +63,7 @@ public class BreakHandler {
                     }
                 });
         eventDispatcher.dispatchEvent(new SendPlayerMessageEvent(player, messageService.getMessage(BundleMessages.INFOHEAD_REMOVED)));
+
+        return false;
     }
 }
